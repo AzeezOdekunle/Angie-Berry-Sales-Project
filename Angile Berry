@@ -1,11 +1,13 @@
 
------CREATING TABLES FOR ANGIE BERRY'S DATABASE 
+--**CREATING TABLES FOR ANGIE BERRY'S DATABASE** 
 
 create Table customer
 (customer_id int primary key,
  first_name varchar (35),
  last_name varchar(35)
 );
+
+
 
 --load data into customer using copy command
 copy customer FROM 
