@@ -43,6 +43,10 @@ This project provides answers to the below questions:
 Refer to the code [here](https://github.com/Upkay/Angie-Berry-Sales-Project/blob/main/AngieBerry.md.sql)
 
 
+## Conclusion 
+
+## Recommendations: 
+
 
 
 
