@@ -18,7 +18,9 @@ They provided us with the following csv files;
 The goal of this project is to assist Angie’s Berry to provide answers to some questions to trigger the progress of their business.
 
 ## Skills Demostrated
-- Entity Relationship Diagram, Database Creation, Data Manipulation, Postgre SQL
+- Postgre SQL
+- Entity Relationship Diagram
+- Database Creation
 
 ## Problem Statement
 - What is Angie’s Berry Corner’s average daily sales volume?
@@ -31,11 +33,12 @@ The goal of this project is to assist Angie’s Berry to provide answers to some
 - Product that generate the highest income and by how much the organization is looking at identifying the customer that patronize them the most in order for them to encourage them with a gift
 - Which customer generate least income and by how much?
 - Which of the employee spend the least day at angie?
-- What is the organization busiest hour?
-
-  
+- What is the organization busiest hour?  
 - Which day of the week does the organization sales the most?
 - Which month of the year does the organization makes the most sales?
+
+
+Refer to the code [here](https://github.com/Upkay/Angie-Berry-Sales-Project/blob/main/AngieBerry.md.sql)
 
 
 
