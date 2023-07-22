@@ -32,6 +32,8 @@ The goal of this project is to assist Angie’s Berry to provide answers to some
 - Which customer generate least income and by how much?
 - Which of the employee spend the least day at angie?
 - What is the organization busiest hour?
+
+  
 - Which day of the week does the organization sales the most?
 - Which month of the year does the organization makes the most sales?
 
