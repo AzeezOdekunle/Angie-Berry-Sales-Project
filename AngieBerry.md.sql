@@ -1,5 +1,5 @@
 
------CREATING TABLES FOR ANGIE BERRY'S DATABASE 
+--CREATING TABLES FOR ANGIE BERRY'S DATABASE
 
 create Table customer
 (customer_id int primary key,
