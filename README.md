@@ -25,22 +25,22 @@ The goal of this project is to assist Angie’s Berry to provide answers to some
 ## Problem Statement
 This project provides answers to the below questions: 
 
-- What is Angie’s Berry Corner’s average daily sales volume?
-- Which products sell best?
-- Top 5 Angie loyalty customer?
-- What is the full name of their current staff?
-- What is the product that generate the least income and by much?
+- Angie’s Berry Corner’s average daily sales volume
+- The products that sell best
+- Top 5 Angie loyalty customers
+- The full name of their current staff
+- The product that generate the least income and by how much
 - The organization want to ascertain the income realize from sales
 - The organization want to ascertain the amount they generate from each product
 - Product that generate the highest income and by how much the organization is looking at identifying the customer that patronize them the most in order for them to encourage them with a gift
-- Which customer generate least income and by how much?
-- Which of the employee spend the least day at angie?
-- What is the organization busiest hour?  
-- Which day of the week does the organization sales the most?
-- Which month of the year does the organization makes the most sales?
+- The customer that generate the least income and by how much?
+- The employee that spend the least day at organization?
+- The organization's busiest hour?  
+- The day of the week the organization sales the most
+- The month of the year that the organization makes the most sales?
 
 
-Refer to the code [here](https://github.com/Upkay/Angie-Berry-Sales-Project/blob/main/AngieBerry.md.sql)
+Refer to the project [here](https://github.com/Upkay/Angie-Berry-Sales-Project/blob/main/AngieBerry.md.sql)
 
 
 ## Conclusion 
