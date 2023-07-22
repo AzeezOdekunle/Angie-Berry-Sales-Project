@@ -1,5 +1,5 @@
 
------Database creation
+-----CREATING TABLES FOR ANGIE BERRY'S DATABASE 
 
 create Table customer
 (customer_id int primary key,
@@ -7,13 +7,12 @@ create Table customer
  last_name varchar(35)
 );
 
-select * from customer
-
 --load data into customer using copy command
-copy customer from 
+copy customer FROM 
 'C:\Program Files\PostgreSQL\Customers.csv' delimiter ',' csv header;
 
-select * from customer
+--To view customer table 
+SELECT * FROM customer
 
 create table employee 
 (employee_id int primary key,
@@ -22,12 +21,11 @@ create table employee
  start_date date,
  end_date date
 );
-
-select * from employee
-
 --load data into employee using command copy
-copy employee from 
+copy employee FROM 
 'C:\Program Files\PostgreSQL\Employees.csv' delimiter ',' csv header;
+
+-- To view employee table
 select * from employee
 
 create table product(
@@ -39,6 +37,8 @@ create table product(
 --load data into product using command copy
 copy product from
 'C:\Program Files\PostgreSQL\Products.csv' delimiter ',' csv header;
+
+--To view table product
 select * from product
 
 create table transaction (
@@ -49,162 +49,163 @@ create table transaction (
 	paid_at timestamp,
 	Amount int
 );
-drop table transaction
-
-select * from transaction
 
 --load data into transaction using copy command
 copy transaction from 
 'C:\Program Files\PostgreSQL\Transactions.csv' delimiter ',' csv header;
 
 SET datestyle = dmy;
+
+--To view table transaction
 select * from transaction
 
---Angie's berry corner's average daily sales volume
 
-select 
-	round(avg(quantity)) as avg_quantity_sales,
-	round(avg(amount)) as avg_amount
-from transaction;
+--- BUSINESS REQUIREMENTS 
 
---Which products sell best
+--1. Angie's berry corner's average daily sales volume
 
-select	
+SELECT 
+	round(AVG(quantity)) AS avg_quantity_sales_per_day,
+	round(AVG(amount)) AS avg_amount
+FROM transaction;
+
+--2.  Which products sell best
+
+ SELECT
  p.product_id, p.name,
- sum (quantity) as total_quantity,
- sum(amount) as total_amt
- from product p join transaction t on 
+ SUM (quantity) AS total_quantity,
+ SUM(amount) AS total_amt
+ FROM product p INNER JOIN transaction t ON 
  p.product_id = t.product_id
- group by 1
- order by 4,3 desc
- limit 4;
+ GROUP BY 1
+ ORDER BY 4,3 DESC
+ LIMIT 5;
  
- --Top 5 angie loyalty customer*****
+ --3. Top 5 angie loyalty customer
  
- select c.customer_id,
+ SELECT c.customer_id,
  		t.amount,
- 		concat(first_name, ' ',last_name) as full_name, 
-		sum(amount) as total_amt,
-		2*(amount) as loyalty_pt 
-		from customer c join transaction t on 
+ 		concat(first_name, ' ',last_name) AS full_name, 
+		SUM(amount) AS total_amt,
+		2*(amount) AS loyalty_pt 
+		FROM customer c INNER JOIN transaction t ON 
 		c.customer_id = t.customer_id
-		group by 1,2,3
-		order by 5 desc
-		limit 5;
+		GROUP BY 1,2,3
+		ORDER BY 5 DESC
+		LIMIT 5;
 		
--- What is the full name of their current staff
-select * from employee
+--4. What is the full name of their current staff
 
-select employee_id,
+SELECT employee_id,
 	   first_name,
 	   last_name,
-	   concat(first_name,' ', last_name) as full_name
-from employee
-where end_date is null;
+	   concat(first_name,' ', last_name) AS full_name
+FROM employee
+WHERE end_date IS null;
 
---What is the product that generate the least income and by how much
+--5. What is the product that generate the least income and by how much
 
- select p.product_id, p.name,
- 		sum(amount) as total_income
- from transaction t join product p 
- 		on t.product_id = p.product_id
-		group by 1
- 		order by 3
- 		limit 1;
+ SELECT p.product_id, p.name,
+ 		SUM(amount) as total_income
+FROM transaction t INNER JOIN product p 
+ 		ON t.product_id = p.product_id
+		GROUP BY 1
+ 		ORDER BY 3
+ 		LIMIT 1;
 		
---The organization want to ascertain the income realize from sales
+--6. The organization want to ascertain the income realize from sales
 
-select 
-		sum (amount) as total_income 
-from 	transaction;
+SELECT 
+		SUM (amount) AS total_Sales_income 
+FROM 	transaction;
 
 
---The organization want to ascertain the amount they generate from each product
+--7. The organization want to ascertain the amount they generate from each product
 
-select p.product_id, p.name,
-	   sum(amount) as total_amt
-from product p join transaction t 
-on p.product_id = t.product_id
-	   group by 1
-	   order by 3;
+SELECT p.product_id, p.name,
+	   SUM(amount) AS total_amt
+FROM product p INNER JOIN transaction t 
+ON p.product_id = t.product_id
+	   GROUP BY 1
+	   ORDER BY 3;
 	 
 	 
---Product that generate the highest income and by how much 
+--8. Product that generate the highest income and by how much 
 
-select p.product_id, p.name,
-	   SUM(amount) as total_income
-from transaction t join product p 
-on t.product_id = p.product_id
-	   group by 1
-	   order by 3 desc
-	   limit 1;
+SELECT p.product_id, p.name,
+	   SUM(amount) AS total_income
+FROM transaction t INNER JOIN product p 
+ON t.product_id = p.product_id
+	  GROUP BY 1
+	   ORDER BY 3 DESC
+	 LIMIT 1;
 	   
 
---the organization is looking at identifying the customer that patronize 
+--9. The organization is looking at identifying the customer that patronize 
 --them the most in order for them to encourage them with a gift
 --*Tips: purchase frequency, average purchase amount, lack of returns, response to survey requests, positive reviews on surveys, and posting positive opinions on social media*  
 
  
- select c.customer_id, concat(first_name, ' ',last_name) as full_name,
- 		round(avg (amount)) as avg_purchase 
- from transaction t join customer c 
-      on t.customer_id = c.customer_id
-	  group by 1
-	  order by 3 desc
-	  limit 5;
+ SELECT c.customer_id, concat(first_name, ' ',last_name) AS full_name,
+ 		round(AVG (amount)) AS avg_purchase 
+FROM transaction t INNER JOIN customer c 
+     ON t.customer_id = c.customer_id
+	  GROUP BY 1
+	 ORDER BY 3 DESC
+	 LIMIT 5;
  			
--- which customer generate least income and by how much?
+--10. Which customer generate least income and by how much?
 
-select c.customer_id, concat(first_name, ' ',last_name),
-	   sum(amount) as customer_income
-from transaction t join customer c 
+SELECT c.customer_id, concat(first_name, ' ',last_name),
+	   SUM(amount) AS customer_income
+FROM transaction t INNER JOIN customer c 
 	 on t.customer_id = c.customer_id
-	 group by 1
-	 order by 3
-	 limit 5;
+	 GROUP BY 1
+	 ORDER BY 3
+	LIMIT 5;
 	 
-	 --***which of the employee spend the least day at angie***.
-select * from employee
+--11. Which of the employee spend the least day at angie
 
-select employee_id, concat(first_name, ' ',last_name) as full_name, 
+SELECT employee_id, concat(first_name, ' ',last_name) as full_name, 
 		start_date, 
 		end_date,
 		((end_date - start_date) + 1) as least_day
-from employee
-group by 1,2,3,4
-having end_date is not Null
-order by 5
-limit 1;				
+FROM employee
+GROUP BY 1,2,3,4
+HAVING end_date IS NOT Null
+ORDER BY 5
+LIMIT 1;				
 				
 				
---What is the organization busiest hour?  
+--12. What is the organization busiest hour?  
 	
- select Date_part ('hour', paid_at) as buzy_time,
-		sum (amount)
-		from transaction
-		group by 1
-		order by 2 desc;
+ SELECT Date_part ('hour', paid_at) AS buzy_time,
+		SUM (amount)
+		FROM transaction
+		GROUP BY 1
+		ORDER BY 2 DESC
+		LIMIT 1;
 		
---Which day of the week does the organization sales the most
+--13. Which day of the week does the organization sales the most
+								
+SELECT date_part('dow', paid_at) AS week_day,
+		SUM(amount) AS sales
+FROM   transaction 
+		GROUP BY 1
+		ORDER BY 2 DESC
+		LIMIT 1;
+---The output gave 6, which iterally means FRIDAY
 				
 				
-select date_part('dow', paid_at) AS week_day,
-		sum(amount) AS sales
-from   transaction 
-		group by 1
-		order by 2 desc
-		limit 1;
-				
-				
----Which month of the year does the organization makes the most sales
+---14. Which month of the year does the organization makes the most sales
   
-select date_part ('month', paid_at) as sales_month,
-		sum(amount) as sales
-from  transaction 
-	    group by 1
-		order by 2 desc
-		limit 1;		
-		
+SELECT date_part ('month', paid_at) AS most_sales_month,
+		SUM(amount) AS sales
+FROM  transaction 
+	    GROUP BY 1
+		ORDER BY 2 DESC
+		LIMIT 1;		
+--- The output gave 7, which literally denotes JULY
 				
 				
 	
