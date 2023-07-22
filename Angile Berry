@@ -8,7 +8,6 @@ create Table customer
 );
 
 
-
 --load data into customer using copy command
 copy customer FROM 
 'C:\Program Files\PostgreSQL\Customers.csv' delimiter ',' csv header;
