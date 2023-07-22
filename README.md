@@ -23,6 +23,8 @@ The goal of this project is to assist Angie’s Berry to provide answers to some
 - Database Creation
 
 ## Problem Statement
+This project provides answers to the below questions: 
+
 - What is Angie’s Berry Corner’s average daily sales volume?
 - Which products sell best?
 - Top 5 Angie loyalty customer?
