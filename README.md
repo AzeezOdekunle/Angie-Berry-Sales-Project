@@ -44,6 +44,9 @@ Refer to the project [here](https://github.com/Upkay/Angie-Berry-Sales-Project/b
 
 
 ## Conclusion and Recommendations: 
+1. Angie's Berry should put discount especially on some of the least income products for affordability and patronage.
+2. It is recommended that Angie's Berry to conduct campaigns and make advertisements on social and media outlets for the awareness and customers participation.
+3. Angie's Berry should entertain a customer's feedback by conducting a monthly or bi-weekly survey for customer's satisfaction. 
 
 
 
