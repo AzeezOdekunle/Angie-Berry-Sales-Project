@@ -23,7 +23,7 @@ The goal of this project is to assist Angie’s Berry to provide answers to some
 - Database Creation
 
 ## Problem Statement
-This project provides answers to the below questions: 
+This project provides answers to the following questions: 
 
 - Angie’s Berry Corner’s average daily sales volume
 - The products that sell best
@@ -43,9 +43,9 @@ This project provides answers to the below questions:
 Refer to the project [here](https://github.com/Upkay/Angie-Berry-Sales-Project/blob/main/AngieBerry.md.sql)
 
 
-## Conclusion 
+## Conclusion and Recommendations: 
 
-## Recommendations: 
+
 
 
 
