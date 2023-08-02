@@ -1,6 +1,6 @@
 # Angie-Berry-Sales-Analysis
 
-![](Intro_Image.jpg)
+![](SalesImage.jpg)
 ---
 
 ## Introduction
