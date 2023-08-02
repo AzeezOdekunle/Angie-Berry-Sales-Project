@@ -21,6 +21,7 @@ The goal of this project is to assist Angie’s Berry to provide answers to some
 - Postgre SQL
 - Entity Relationship Diagram
 - Database Creation
+- Database Query
 
 ## Problem Statement
 This project provides answers to the following questions: 
