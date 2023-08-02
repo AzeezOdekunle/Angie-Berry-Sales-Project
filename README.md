@@ -31,7 +31,7 @@ This project provides answers to the following questions:
 - The full name of their current staff
 - The product that generate the least income and by how much
 - The organization want to ascertain the income realize from sales
-- The organization want to ascertain the amount they generate from each product
+- The organization wants to ascertain the amount they generate from each product
 - Product that generate the highest income and by how much the organization is looking at identifying the customer that patronize them the most in order for them to encourage them with a gift
 - The customer that generate the least income and by how much?
 - The employee that spend the least day at organization?
@@ -45,8 +45,8 @@ Refer to the project [here](https://github.com/Upkay/Angie-Berry-Sales-Project/b
 
 ## Conclusion and Recommendations: 
 1. Angie's Berry should put discount especially on some of the least income products for affordability and patronage.
-2. It is recommended that Angie's Berry to conduct campaigns and make advertisements on social and media outlets for the awareness and customers participation.
-3. Angie's Berry should entertain a customer's feedback by conducting a monthly or bi-weekly survey for customer's satisfaction. 
+2. It is recommended that Angie's Berry conducts campaigns and make advertisements on social and media outlets for  awareness and customer's participation.
+3. Angie's Berry should entertain customers' feedback by conducting monthly or bi-weekly surveys for customer's satisfaction. 
 
 
 
